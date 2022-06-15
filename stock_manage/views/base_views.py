@@ -7,7 +7,7 @@ from ..models import Question
 
 from django.db.models import Q
 
-import requests
+#import requests
 import json
 def stock_manage(request):
     page = request.GET.get('page', '1')  # 페이지
