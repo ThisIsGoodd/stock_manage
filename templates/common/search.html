@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <nav class="navbar navbar-light bg-light">
+        <form class="form-inline" method="GET" action=""{% url 'search' %}>
+            {% csrf_token %}
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="ticker">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </nav>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">key</th>
+            <th scope="col">value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">symbol</th>
+            <td>{{ stock.symbol }}</td>
+          </tr>
+          <tr>
+            <th scope="row">companyName</th>
+            <td>{{ stock.companyName }}</td>
+          </tr>
+          <tr>
+            <th scope="row">latestPrice</th>
+            <td>{{ stock.latestPrice }}</td>
+          </tr>
+          <tr>
+            <th scope="row">previousClose</th>
+            <td>{{ stock.previousClose }}</td>
+          </tr>
+          <tr>
+            <th scope="row">previousVolume</th>
+            <td>{{ stock.previousVolume }}</td>
+          </tr>
+          <tr>
+            <th scope="row">week52High</th>
+            <td>{{ stock.week52High }}</td>
+          </tr>
+          <tr>
+            <th scope="row">week52Low</th>
+            <td>{{ stock.week52Low }}</td>
+          </tr>
+          <tr>
+            <th scope="row">latestTime</th>
+            <td>{{ stock.latestTime }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+{% endblock %}
